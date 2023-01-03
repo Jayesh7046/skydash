@@ -1266,6 +1266,11 @@
   }
 }
 
+.center{
+  text-align: center;
+  width: 100%;
+}
+
 @-moz-keyframes swing {
   20%, 40%, 60%, 80%, 100% {
     -webkit-transform-origin: top center 50%;

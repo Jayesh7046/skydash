@@ -66,7 +66,7 @@
             <div class="collapse" id="insert_data">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../../pages/Movie_releted_pages/movie.php">Movies</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.php">Theators</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/Movie_releted_pages/cinema.php">Theators</a></li>
               </ul>
             </div>
           </li>
