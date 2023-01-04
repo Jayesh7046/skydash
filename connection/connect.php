@@ -4,6 +4,6 @@
     $password = "";
     $dbname = "movieticketdb";
 
-    $pdo = new PDO("mysql:host=localhost;dbname=movieticketdb", "root", "");
+    $connection = mysqli_connect('localhost', 'root', '', 'movieticketdb');
 
 ?>

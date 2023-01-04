@@ -1,0 +1,14 @@
+1.  users 
+        (Id,Fullname,Useranme,Password,Mobileno)
+2.  movies
+        (Id,Name,Description,Release_Date,Languages,Price_Per_T,Photo,Categories)
+3.  cinemas
+        (Id,Name,Screens)
+4.  show_time
+        (Id,Movie_Id{Fk},Cinemas_Id{Fk},Set_Movies_Screens_Id{Fk},Date_Time)
+5.  set_movie_screens
+        (Id,Screenno,Cinemas_Id{Fk},Movie_Id{Fk})
+6.  booking
+        (Id,Show_Time_Id{Fk},Totalprice)
+7.  bookedseats
+        (Id,Booking_Id{Fk},Bookedseats)

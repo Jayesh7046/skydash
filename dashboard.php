@@ -1,13 +1,13 @@
 <?php
 session_start();
-if(!isset($_SESSION['admin'])){
-    header("Location: ./index.php");
+if (!isset($_SESSION['admin'])) {
+  header("Location: ./index.php");
 }
 
-// $connection = mysqli_connect('localhost', 'root', '', 'movieticketdb');
-// $query = "SELECT * FROM `movie` WHERE *";
-// $result = $connection->query($query);
-// $rows = $result->fetch_all(MYSQLI_BOTH);
+include_once("./connection/connect.php");
+$query = "SELECT * FROM `movies`";
+$result = $connection->query($query);
+$rows = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -26,9 +26,10 @@ if(!isset($_SESSION['admin'])){
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
+
 <body>
   <div class="container-scroller">
-    <?php include_once("pages/navbar.php");?>
+    <?php include_once("pages/navbar.php"); ?>
     <div class="container-fluid page-body-wrapper">
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
@@ -91,73 +92,9 @@ if(!isset($_SESSION['admin'])){
           </li>
         </ul>
       </nav>
-      <!-- <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <p class="card-title">Advanced Table</p>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="table-responsive">
-                        <table id="example" class="display expandable-table" style="width:100%">
-                          <thead>
-                            <tr>
-                              <th>Quote#</th>
-                              <th>Product</th>
-                              <th>Business type</th>
-                              <th>Policy holder</th>
-                              <th>Premium</th>
-                              <th>Status</th>
-                              <th>Updated at</th>
-                              <th></th>
-                            </tr>
-                          </thead>
-                      </table>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div> -->
-
-        <div class="container mt-5 mb-5">
-            <h1>Panding</h1>
-            <div class="card">
-                <div class="card-body">
-                    <div class="table-responsive m-t-40">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>name</th>
-                                    <th>discription</th>
-                                    <th>photo</th>
-                                    <th>price</th>
-                                </tr>
-                            </thead>
-                            <?php
-                            foreach ($rows as $r) {
-                            ?>
-                                <tbody>
-                                    <tr>
-                                        <td><?= $r['1'] ?></td>
-                                        <td><?= $r['2'] ?></td>
-                                        <td><?= $r['3'] ?></td>
-                                        <td><?= $r['4'] ?></td>
-                                    </tr>
-                                </tbody>
-                            <?php
-                            }
-                            ?>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
+      <?php
+      include_once("./connection/movieview.php");
+      ?>
     </div>
   </div>
 
