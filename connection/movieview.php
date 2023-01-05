@@ -23,13 +23,13 @@
                 ?>
                   <tbody>
                     <tr>
-                      <td><?= $r['1'] ?></td>
-                      <td><?= $r['2'] ?></td>
-                      <td><?= $r['3'] ?></td>
-                      <td><?= $r['4'] ?></td>
-                      <td><?= $r['5'] ?></td>
-                      <td><?= $r['6'] ?></td>
-                      <td><?= $r['7'] ?></td>
+                      <td><?= $r['Name'] ?></td>
+                      <td><?= $r['Discription'] ?></td>
+                      <td><?= $r['Relese_Date'] ?></td>
+                      <td><?= $r['Language'] ?></td>
+                      <td><?= $r['Price_Per_T'] ?></td>
+                      <td><?= $r['Photo'] ?></td>
+                      <td><?= $r['Category'] ?></td>
                     </tr>
                   </tbody>
                 <?php

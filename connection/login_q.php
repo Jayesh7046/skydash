@@ -2,7 +2,7 @@
 
   session_start();
   try{
-    include_once("./connect.php");
+    $pdo = new PDO("mysql:host=localhost;dbname=movieticketdb", "root", "");
     if(isset($_POST["login_button"])){
       if($_POST["username"] == "" or $_POST["password"] == ""){
 
@@ -17,11 +17,11 @@
 
         $username=$_POST["username"];
         $password=$_POST["password"];
-        $query=$pdo->prepare("SELECT * FROM users WHERE username=? AND password=? ");
-        $query->execute(array($username,$password));
+        $query=$pdo->prepare("SELECT * FROM users WHERE Username=?");
+        $query->execute(array($username));
         $control=$query->fetch();
         $id=$control['id'];
-        if($username == 'admin' and $password == 'admin'){
+        if(password_verify($password,$control["PasswordHash"])){
           $_SESSION["admin"]="admin";
           header("Location:../dashboard.php");
         }
@@ -34,5 +34,5 @@
   }
  
   catch(PDOException $e){
-    echo $e->getMessage("Connection failed");
+    echo $e;
   }
